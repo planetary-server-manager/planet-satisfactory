@@ -4,21 +4,10 @@ LABEL maintainer="thekraken8him"
 
 ENV TIMEZONE=America/Los_Angeles \
     PUID=1000 \
-    PGID=1000 \
-    MAP_NAME=new-map \
-    SERVER_NAME="Jellie Frontier Server" \
-    DESCRIPTION="This is a containerized Satisfactory server deployed from the Jellie Frontier." \
-    PUBLIC=true \
-    STEAM=true \
-    LAN=true \
-    MAX_PLAYERS=0 \
-    PASSWORD=\
-    WHITELIST=false \
-    PEACEFUL=false \
-    SEED=null
+    PGID=1000
 
-EXPOSE 7770/tcp
-EXPOSE 7770/udp
+EXPOSE 7777/tcp
+EXPOSE 7777/udp
 
 # Get base tools
 RUN apt-get update
@@ -28,7 +17,7 @@ RUN apt-get install software-properties-common apt-transport-https curl lib32gcc
 RUN mkdir /steam && \
     mkdir /server && \
     mkdir /saves && \
-    mkdir /config
+    mkdir /backups
 
 # Set up SteamCMD
 RUN curl -L --max-redirs 1 "https://steamcdn-a.akamaihd.net/client/installer/steamcmd_linux.tar.gz" -o /steam/steamcmd_linux.tar.gz && \
@@ -48,6 +37,7 @@ RUN chown satisfactory bootstrap.sh && \
     chown -R satisfactory /server && \
     chown -R satisfactory /steam && \
     chown -R satisfactory /saves && \
+    chown -R satisfactory /backups && \
     chmod +x bootstrap.sh && \
     chmod +x server.sh
 
