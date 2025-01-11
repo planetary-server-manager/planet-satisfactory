@@ -1,6 +1,6 @@
 services:
   satisfactory-server:
-    image: jelliefrontier/satisfactory-dedicated-server:latest
+    image: ghcr.io/planetary-server-manager/planet-satisfactory:latest
     container_name: satisfactory-server
     user: 1000:1000
     ports:

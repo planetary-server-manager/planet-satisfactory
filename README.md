@@ -1,5 +1,5 @@
 # Satisfactory Dedicated Server
-This is a simple docker container for a Satisfactory dedicated server. 
+PSM container image for Satisfactory. It provides tight integration with the [PSM API](https://github.com/planetary-server-manager/api-server).
 
 ## Get Started
 1. Once you have [Docker](https://docs.docker.com/engine/install/) configured on your host, simply create a docker-compose.yaml file and paste in the contents of [docker-compose.yaml.example](./docker-compose.yaml.example).
