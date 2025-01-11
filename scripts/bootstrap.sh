@@ -1,7 +1,5 @@
 #!/bin/bash
-echo "Welcome to the"
 cat logo.txt
-
 # Update SteamCMD and download latest server binary
 echo "Updating SteamCMD and downloading latest server binary..."
 cd /steam
@@ -12,5 +10,5 @@ TIMESTAMP=$(date +%Y-%m-%d_%H-%M)
 cp -r /home/ubuntu/.config/Epic/FactoryGame/Saved/SaveGames /backups/$TIMESTAMP
 
 # Run server
-cd /
+cd /scripts
 ./server.sh

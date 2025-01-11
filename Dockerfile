@@ -11,15 +11,12 @@ EXPOSE 7777/udp
 RUN mkdir /saves
 
 # Add scripts to container
-COPY bootstrap.sh bootstrap.sh
-COPY server.sh server.sh
+COPY /scripts /scripts
 
 # Fix Permissions
 RUN usermod -l satisfactory ubuntu
-RUN chown satisfactory bootstrap.sh && \
-    chown satisfactory server.sh && \ 
+RUN chown -R satisfactory /scripts && \
     chown -R satisfactory /saves && \
-    chmod +x bootstrap.sh && \
-    chmod +x server.sh
+    chmod -R 770 /scripts
 
 CMD ["/bin/bash", "bootstrap.sh"]
