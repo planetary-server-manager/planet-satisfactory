@@ -19,4 +19,6 @@ RUN chown -R satisfactory /scripts && \
     chown -R satisfactory /saves && \
     chmod -R 770 /scripts
 
-CMD ["/bin/bash", "bootstrap.sh"]
+USER satisfactory
+
+CMD ["/bin/bash", "/scripts/bootstrap.sh"]
