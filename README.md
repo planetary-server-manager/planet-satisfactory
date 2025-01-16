@@ -1,4 +1,4 @@
-# Satisfactory Dedicated Server
+# 🪐 Planetary Satisfactory Server
 PSM container image for Satisfactory. It provides tight integration with the [PSM API](https://github.com/planetary-server-manager/api-server).
 
 ## Get Started
